@@ -23,7 +23,15 @@ function settings($stateProvider){
     templateUrl : 'views/about.html'
   };
 
+  var serviceDetailState = {
+    name : 'home.serviceDetail',
+    url : '/detail',
+    templateUrl : 'views/serviceDetail.html',
+    controller: 'detailCtrl as ctx',
+  };
+
   $stateProvider.state(homeState);
   $stateProvider.state(mainState);
   $stateProvider.state(aboutState);
+  $stateProvider.state(serviceDetailState);
 }

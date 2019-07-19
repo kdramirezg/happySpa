@@ -1,31 +1,17 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-  <h4>Services</h4>
-  <br>
-  <ol>
-    <li ng-repeat="service in ctx.services">{{service.name}} - ${{service.cost}}
-      <br>
-      {{service.description}} <h4 ng-class="{'text-success':service.endHappy, 'text-danger':!service.endHappy}">{{service.endHappy ? 'Con Final Feliz!! :"D' : 'Sin Final Feliz :('}}</h4>
-    </li>
-  </ol>
-</div>
+<section class="section section-sm section-first bg-default text-md-left">
+    <div class="row row-50 align-items-center justify-content-center justify-content-xl-between" ng-repeat="service in ctx.services">
+      <div class="col-lg-6 text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><img
+          src="{{service.image}}" alt="" width="556" height="382">
+      </div>
+      <div class="col-lg-6 wow fadeInRight" data-wow-delay=".1s"
+        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+        <div class="box-width-lg-470">
+          <h3>{{service.name}}</h3>
+          <!-- Bootstrap tabs-->
+          <p>{{service.description}}</p>
+          <h4>Precio: ${{service.cost}}</h4>
+          <div class="group-md group-middle"><h4 ng-class="{'text-success':service.endHappy, 'text-danger':!service.endHappy}">{{service.endHappy ? 'Con Final Feliz' : 'Sin Final Feliz'}}</h4></div>
+        </div>
+      </div>
+    </div>
+</section>
