@@ -1,1 +1,19 @@
-<h1>Hola</h1>
+<section class="section section-sm section-first bg-default text-md-left">
+  <div class="row row-50 align-items-center justify-content-center justify-content-xl-between">
+    <div class="col-lg-6 text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+      <img ng-src="{{ctx.serviceDetail.image}}" alt="" width="556" height="382">
+    </div>
+    <div class="col-lg-6 wow fadeInRight" data-wow-delay=".1s"
+      style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+      <div class="box-width-lg-470">
+        <h3>{{ctx.serviceDetail.name}}</h3>
+        <p>{{ctx.serviceDetail.description}}</p>
+        <h4>Precio: ${{ctx.serviceDetail.cost}}</h4>
+        <div class="group-md group-middle">
+          <h4 ng-class="{'text-success':ctx.serviceDetail.happyEnd, 'text-danger':!ctx.serviceDetail.happyEnd}">
+            {{ctx.serviceDetail.happyEnd ? 'Con Final Feliz' : 'Sin Final Feliz'}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

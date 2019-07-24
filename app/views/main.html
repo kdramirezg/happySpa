@@ -1,17 +1,23 @@
 <section class="section section-sm section-first bg-default text-md-left">
-    <div class="row row-50 align-items-center justify-content-center justify-content-xl-between" ng-repeat="service in ctx.services">
-      <div class="col-lg-6 text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><img
-          src="{{service.image}}" alt="" width="556" height="382">
+  <div class="row row-50 align-items-center justify-content-center justify-content-xl-between"
+    ng-repeat="service in ctx.services">
+    <a ui-sref="home.serviceDetail({id : service.id})">
+      <div class="col-lg-6 text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+        <img ng-src="{{service.image}}" alt="" width="556" height="382">
       </div>
       <div class="col-lg-6 wow fadeInRight" data-wow-delay=".1s"
         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
         <div class="box-width-lg-470">
           <h3>{{service.name}}</h3>
-          <!-- Bootstrap tabs-->
           <p>{{service.description}}</p>
           <h4>Precio: ${{service.cost}}</h4>
-          <div class="group-md group-middle"><h4 ng-class="{'text-success':service.endHappy, 'text-danger':!service.endHappy}">{{service.endHappy ? 'Con Final Feliz' : 'Sin Final Feliz'}}</h4></div>
+          <div class="group-md group-middle">
+            <h4 ng-class="{'text-success':service.happyEnd, 'text-danger':!service.happyEnd}">
+              {{service.happyEnd ? 'Con Final Feliz' : 'Sin Final Feliz'}}</h4>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
+
+  </div>
 </section>

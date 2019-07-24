@@ -25,7 +25,7 @@ function settings($stateProvider){
 
   var serviceDetailState = {
     name : 'home.serviceDetail',
-    url : '/detail',
+    url : '/detail/{id}',
     templateUrl : 'views/serviceDetail.html',
     controller: 'detailCtrl as ctx',
   };

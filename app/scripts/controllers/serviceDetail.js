@@ -8,18 +8,25 @@
  * Controller of the spafelizApp
  */
 angular.module('spafelizApp').controller('detailCtrl', detailCtrl);
-detailCtrl.$inject = ['spaServices'];
+detailCtrl.$inject = ['$state', 'spaServicesHttp'];
 
-function detailCtrl(spaServices) {
+function detailCtrl($state, spaServicesHttp) {
   var ctx = this;
-  // ctx.$onInit = onInit;
-  // ctx.loadSpaServices = loadSpaServices;
+  ctx.$onInit = onInit;
+  ctx.loadSpaServiceDetail = loadSpaServiceDetail;
 
-  // function onInit(){
-  //   ctx.services = ctx.loadSpaServices();
-  // }
+  function onInit(){
+    ctx.loadSpaServiceDetail();
+  }
 
-  // function loadSpaServices(){
-  //   return spaServices.getAllServices();
-  // }
+  function loadSpaServiceDetail(){
+    var id = $state.params.id;
+    spaServicesHttp.getById(id)
+    .then(function (data){
+      ctx.serviceDetail = data.data;
+    })
+    .catch(function(err){
+      console.log("Error: " + err);
+    });
+  }
 };
