@@ -23,7 +23,7 @@ function mainCtrl(spaServicesHttp) {
     spaServicesHttp.getAll()
     .then(function (data){
       ctx.services = data.data;
-      console.log(ctx.services);
+      //console.log(ctx.services);
     })
     .catch(function(err){
       console.log("Error: " + err);

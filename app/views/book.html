@@ -1,0 +1,47 @@
+<div class="container">
+  <form ng-submit="ctx.submitBook()" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Nombre completo</label>
+      <div class="col-sm-10">
+        <input type="text" ng-model="ctx.form.name" class="form-control" id="inputEmail3" placeholder="Escriba su nombre completo">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Correo</label>
+      <div class="col-sm-10">
+        <input type="email" ng-model="ctx.form.mail" class="form-control" id="inputEmail3" placeholder="Escriba su correo">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Fecha y Hora de reserva</label>
+      <div class="col-sm-5">
+        <input type="date" ng-model="ctx.form.date" class="form-control" id="inputEmail3">
+      </div>
+      <div class="col-sm-5">
+          <input type="time" ng-model="ctx.form.time" class="form-control" id="inputEmail3">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Seleccione el servicio</label>
+        <div class="col-sm-10">
+          <select name="" id="" ng-model="ctx.form.serviceSelected" class="form-control">
+            <option  ng-repeat="service in ctx.services" ng-value="{{service.id}}">{{service.name}}</option>
+          </select>
+        </div>
+    </div>
+    <!-- <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+      </div>
+    </div> -->
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Reservar</button>
+      </div>
+    </div>
+  </form>
+</div>

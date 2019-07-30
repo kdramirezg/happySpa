@@ -13,5 +13,8 @@ angular.module('spafelizApp')
     services: {
       all: 'services',
       one: 'services/'
+    },
+    books: {
+      createBook: 'books'
     }
   });

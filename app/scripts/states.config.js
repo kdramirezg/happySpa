@@ -1,8 +1,8 @@
 'use strict';
 angular.module('spafelizApp').config(settings);
-settings.$inject = ['$stateProvider'];
+settings.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-function settings($stateProvider){
+function settings($stateProvider, $urlRouterProvider){
 
   var homeState = {
     abstract : true,
@@ -30,8 +30,20 @@ function settings($stateProvider){
     controller: 'detailCtrl as ctx',
   };
 
+  var bookState = {
+    name : 'home.book',
+    url : '/book',
+    templateUrl : 'views/book.html',
+    controller: 'bookCtrl as ctx',
+  };
+
   $stateProvider.state(homeState);
   $stateProvider.state(mainState);
   $stateProvider.state(aboutState);
   $stateProvider.state(serviceDetailState);
+  $stateProvider.state(bookState);
+
+
+  $urlRouterProvider.when('', '/');
+
 }
